@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1441051490 source:/home/haha/hunix/hunix1.1/main.cpp
+	<iostream>
+	<HaSql.h>
+	<CMD_Maker.h>
+	<Hunix.h>
+
+1441052472 /home/haha/hunix/hunix1.1/include/HaSql.h
+	<string>
+
+1441052561 source:/home/haha/hunix/hunix1.1/src/HaSql.cpp
+	"HaSql.h"
+	<string>
+	<fstream>
+	<iostream>
+	<CMD_Maker.h>
+
+1440793781 source:/home/haha/hunix/hunix1.1/src/CMD_Maker.cpp
+	"CMD_Maker.h"
+	<string>
+
+1440786138 /home/haha/hunix/hunix1.1/include/CMD_Maker.h
+	<string>
+	<iostream>
+
+1440976127 /home/haha/hunix/hunix1.1/include/Hunix.h
+	<string>
+	<iostream>
+
+1441051219 source:/home/haha/hunix/hunix1.1/src/Hunix.cpp
+	"Hunix.h"
+	"HaSql.h"
+	"CMD_Maker.h"
+
