@@ -26,7 +26,9 @@ class HaSql
         std::string * db_col_names();
         int word_count(std::string);
         std::string * db_entry_arr(std::string);
-        void ls();
+        void ls(std::string);
+        std::string child(std::string);
+        bool is_child(std::string,std::string);
     protected:
     private:
 

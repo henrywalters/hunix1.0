@@ -115,14 +115,27 @@ void HaSql::db_open(std::string new_db)
 
 }
 
-void HaSql::ls()
+bool HaSql::is_child(std::string dir, std::string entry)
+{
+    int end_cut = 0;
+    for (int i = 0; i < entry.length(); i++)
+    {
+        if (entry[i] == '/') { end_cut = i; }
+    }
+    std::string entry_prime = entry.substr(0,end_cut);
+    if (entry_prime == dir) { return true ;}
+    else { return false; }
+
+}
+
+void HaSql::ls(std::string dir)
 {
     std::ifstream db(name.c_str());
     std::string line;
     getline(db,line);
     while(getline(db,line))
     {
-        std::cout << line << "    ";
+        if (is_child(dir, line)) { std::cout << child(line) << "    "; }
     }
 }
 bool HaSql::db_enter_row_array(std::string entries[])
@@ -308,4 +321,13 @@ std::string * HaSql::db_entry_arr(std::string line)
     return out;
 }
 
+std::string HaSql::child(std::string parent)
+{
+    int last_cut = 0;
+    for (int i = 0; i < parent.length(); i++)
+    {
+        if (parent[i] == '/') { last_cut = i; }
+    }
+    return parent.substr(last_cut, parent.length() - last_cut);
+}
 

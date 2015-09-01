@@ -14,6 +14,7 @@ class Hunix
         void bash();
         bool login();
         void settings(std::string,std::string);
+        bool check_if_child(std::string);
 
     protected:
     private:

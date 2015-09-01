@@ -9,6 +9,8 @@ using namespace std;
 int main()
 {
     Hunix hu;
+    HaSql db;
+
     bool logged_in = false;
     while (logged_in == false)
     {

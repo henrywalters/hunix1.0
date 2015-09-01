@@ -90,11 +90,11 @@ void Hunix::bash()
             HaSql dirs;
             dirs.db_open("dir_box");
             string * existing = dirs.select("dir",words[1]);
-            if (words[1] + " " != existing[0]){
-                string box[1] = { words[1] };
+            if (words[1] + " " != existing[0] and dirs.is_child("",words[1])){
+                string box[1] = { dir +  '/' + words[1] };
                 dirs.db_enter_row_array(box);
             }
-            else { cout << "dir already exists\n"; }
+            else { cout << "invalid dir/already exists"; }
         }
         else if (words[0] == "cd" && word_count == 2)
         {
@@ -111,8 +111,14 @@ void Hunix::bash()
         {
             HaSql dirs;
             dirs.db_open("dir_box");
-            dirs.ls();
+            dirs.ls(dir);
+            cout << "\n";
         }
     }
 
+}
+
+bool Hunix::check_if_child(string direc)
+{
+    return 0;
 }
